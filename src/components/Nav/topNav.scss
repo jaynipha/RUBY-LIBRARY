@@ -1,13 +1,14 @@
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     padding: 10px 25px;
     align-items: center;
 
-    .nav-header{
+    .nav-header {
         display: flex;
         align-items: center;
-        a{
+
+        a {
             font-size: 30px;
             width: 150px;
             margin-left: 20px;
@@ -15,14 +16,38 @@ nav{
         }
     }
 
-    .nav-contents{
+    .nav-contents {
         display: flex;
         align-self: center;
 
-        a{
+        a {
             margin: 0 20px;
             font-size: 16px;
             color: var(--text-color);
         }
     }
 }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 990px) {
+
+    /* Styles */
+    nav {
+
+
+        .nav-header {
+
+            img {
+                width: 100px;
+            }
+
+            a {
+                font-size: 20px;
+                width: 100px;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (min-device-width: 991px) and (max-device-width: 1200px) {}

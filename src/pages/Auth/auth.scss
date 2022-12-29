@@ -1,0 +1,177 @@
+.auth-container {
+    width: 100%;
+
+    .auth-box {
+        display: flex;
+        margin-bottom: 10px;
+
+        .left-auth-container {
+            width: 50%;
+            display: flex;
+            text-align: center;
+            justify-content: space-around;
+
+            img {
+                transform: scale(0.8);
+                // width: 300px;
+            }
+        }
+
+
+        .right-auth-container {
+            width: 50%;
+            padding: 70px;
+
+            .form-container {
+                padding: 30px;
+                border: 1px solid var(--text-color);
+                box-shadow: var(--card-box-shadow);
+                margin: 0 20px;
+                border-radius: 20px;
+
+                h2 {
+                    font-family: 'poppins' !important;
+                    margin-top: 0;
+                    margin-bottom: 30px;
+                }
+
+                .form-group {
+                    margin: 25px 0;
+
+                    label {
+                        display: block;
+                        margin-bottom: 5px;
+                        color: var(--text-color);
+                    }
+
+                    .form-input {
+                        width: 100%;
+                        padding: 10px;
+                        border: 1px solid var(--text-color);
+                        border-radius: 8px;
+                        font-size: 18px;
+                        
+                        &:focus{
+                            padding: 13px 10px;
+
+                        }
+                    }
+                }
+
+                .btn-submit {
+                    display: block;
+                    background-color: var(--blue);
+                    color: var(--white);
+                    padding: 10px 50px;
+                    border-radius: 8px;
+                    font-family: "poppins" !important;
+                    width: 100%;
+                    margin: 45px 0;
+                    border: 1px solid var(--blue);
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: var(--white);
+                        border: 1px solid var(--blue);
+                        color: var(--blue);
+                    }
+                }
+
+                a {
+                    color: var(--text-color);
+                    text-align: center;
+                    text-decoration: underline;
+                    display: block;
+
+                    &:hover {
+                        color: var(--blue);
+                    }
+                }
+            }
+
+            p {
+                text-align: center;
+                margin-top: 30px;
+
+                a {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+/* Media queries styles */
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 900px) {
+
+    /* Styles */
+    .auth-box {
+        flex-direction: column;
+
+        .left-auth-container {
+            width: 100% !important;
+
+
+            img {
+                // transform: scale(0.5) !important;
+                width: 250px;
+            }
+        }
+
+        .right-auth-container {
+            padding: 10px !important;
+            width: 100% !important;
+        }
+    }
+}
+
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 900px) {
+    .auth-box {
+        flex-direction: column;
+
+        .left-auth-container {
+            width: 100% !important;
+
+            img {
+                // transform: scale(0.5) !important;
+                width: 420px !important;
+            }
+        }
+
+        .right-auth-container {
+            padding: 50px !important;
+            width: 100% !important;
+        }
+    }
+
+}
+
+@media only screen and (min-device-width: 901px) and (max-device-width: 1200px) {
+    .auth-box {
+
+        .left-auth-container {
+            width: 50% !important;
+
+            img {
+                transform: scale(0.7) !important;
+                // width: 250px;            }
+            }
+        }
+
+        .right-auth-container {
+            width: 50% !important;
+            padding: 10px !important;
+        }
+    }
+}
+
+
+
+@media screen and (min-device-width: 1600px) {
+    .auth-box{
+        width: 85% !important;
+        margin: 0 auto;
+    }
+}
