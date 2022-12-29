@@ -1,0 +1,28 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    align-items: center;
+
+    .nav-header{
+        display: flex;
+        align-items: center;
+        a{
+            font-size: 30px;
+            width: 150px;
+            margin-left: 20px;
+            text-align: center;
+        }
+    }
+
+    .nav-contents{
+        display: flex;
+        align-self: center;
+
+        a{
+            margin: 0 20px;
+            font-size: 16px;
+            color: var(--text-color);
+        }
+    }
+}
