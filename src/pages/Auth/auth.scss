@@ -1,6 +1,15 @@
 .auth-container {
     width: 100%;
 
+    input::placeholder{
+        font-size: 16px;
+        
+        &::after{
+            color: red;
+            content: "*";
+        }
+    }
+
     .auth-box {
         display: flex;
         margin-bottom: 10px;
@@ -42,6 +51,7 @@
                         display: block;
                         margin-bottom: 5px;
                         color: var(--text-color);
+                        font-family: 'poppins';
                     }
 
                     .form-input {
@@ -50,8 +60,8 @@
                         border: 1px solid var(--text-color);
                         border-radius: 8px;
                         font-size: 18px;
-                        
-                        &:focus{
+
+                        &:focus {
                             padding: 13px 10px;
 
                         }
@@ -81,7 +91,6 @@
                     color: var(--text-color);
                     text-align: center;
                     text-decoration: underline;
-                    display: block;
 
                     &:hover {
                         color: var(--blue);
@@ -103,11 +112,11 @@
 
 /* Media queries styles */
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 900px) {
+@media only screen and (min-width: 320px) and (max-width: 900px) {
 
     /* Styles */
     .auth-box {
-        flex-direction: column;
+        flex-direction: column !important;
 
         .left-auth-container {
             width: 100% !important;
@@ -127,9 +136,9 @@
 }
 
 
-@media only screen and (min-device-width: 600px) and (max-device-width: 900px) {
+@media only screen and (min-width: 600px) and (max-width: 900px) {
     .auth-box {
-        flex-direction: column;
+        flex-direction: column !important;
 
         .left-auth-container {
             width: 100% !important;
@@ -148,15 +157,17 @@
 
 }
 
-@media only screen and (min-device-width: 901px) and (max-device-width: 1200px) {
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
     .auth-box {
 
         .left-auth-container {
             width: 50% !important;
 
             img {
-                transform: scale(0.7) !important;
-                // width: 250px;            }
+                transform: scale(0.8) !important;
+                display: flex;
+                align-self: flex-start;
+                // width: 250px;            
             }
         }
 
@@ -169,8 +180,8 @@
 
 
 
-@media screen and (min-device-width: 1600px) {
-    .auth-box{
+@media screen and (min-width: 1600px) {
+    .auth-box {
         width: 85% !important;
         margin: 0 auto;
     }

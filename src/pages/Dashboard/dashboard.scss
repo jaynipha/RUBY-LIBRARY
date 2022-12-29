@@ -1,0 +1,52 @@
+.dashboard-container{
+    width: 100%;
+    .dashboard-header{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+
+        h2{
+
+        }
+    }
+
+    .search-container{
+        display: flex;
+        width: 100%;
+        h3{
+
+        }
+    }
+
+    .books-container{
+
+        .tabs {
+            width: 485px;
+            .nav-tab {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin: 0;
+            }
+            .nav-tab li {
+              padding: 5px 10px;
+              font-size: 14px;
+              list-style: none;
+              text-align: center;
+              cursor: pointer;
+              color: var(--dark-purple-bg);
+            }
+        
+            .nav-tab li:hover {
+            }
+            .nav-tab li.active {
+              background-color: var(--warning-carton);
+              color: var(--dark-purple-bg);
+              font-weight: 700;
+              // font-size: 15px;
+              border-radius: 10px;
+            }
+          }
+    }
+}

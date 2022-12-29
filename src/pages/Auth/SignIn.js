@@ -47,12 +47,16 @@ const SignIn = () => {
               <label htmlFor=""> Save Password</label>
 
               <button className="btn-submit" type="submit">
-                {" "}
                 Login now
               </button>
             </form>
-
-            <Link to={"/forgotpassword"}> Forgot Password </Link>
+            <div
+              style={{
+                textAlign: "center",
+              }}
+            >
+              <Link to={"/forgotpassword"}> Forgot Password </Link>
+            </div>
           </div>
 
           <p>
