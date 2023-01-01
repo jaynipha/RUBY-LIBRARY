@@ -10,6 +10,7 @@ import SignUp from './pages/Auth/SignUp';
 import SignIn from './pages/Auth/SignIn';
 import Dashboard from './pages/Dashboard/dashboard';
 import AboutBooks from './pages/Dashboard/aboutBooks';
+import Checkout from './pages/Checkout/checkout';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
               <Route path="/signup" element={<SignUp />  } />
               <Route path="/dashboard" element={<Dashboard />  } />
               <Route path="/aboutbook/:id" element={<AboutBooks />  } />
+              <Route path="/checkout" element={<Checkout />  } />
               
               <Route element={<ProtectedRoute />}>
                 {/* <Route path="/profile" element={<UserProfile />} /> */}
