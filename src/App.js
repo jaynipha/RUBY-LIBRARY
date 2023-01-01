@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './App.scss';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from './pages/Home';
 import Home from './pages/Home/Home';
@@ -21,7 +22,7 @@ function App() {
               <Route path="/login" element={<SignIn />  } />
               <Route path="/signup" element={<SignUp />  } />
               <Route path="/dashboard" element={<Dashboard />  } />
-              <Route path="/aboutbook" element={<AboutBooks />  } />
+              <Route path="/aboutbook/:id" element={<AboutBooks />  } />
               
               <Route element={<ProtectedRoute />}>
                 {/* <Route path="/profile" element={<UserProfile />} /> */}
