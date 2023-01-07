@@ -144,3 +144,35 @@
         }
     }
 }
+
+
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+    .checkout-container{
+        flex-direction: column;
+
+        .left-section{
+            width: 100%;
+
+            .py-method{
+                flex-direction: column;
+
+                .py-types{
+                    display: flex;
+
+                    img{
+                        width: 50px;
+                        margin: 0 10px;
+                    }
+                }
+
+                .py-form-card{
+                    width: 100%;
+                }
+            }
+        }
+
+        .right-section{
+            width: 100%;
+        }
+    }
+}

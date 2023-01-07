@@ -112,7 +112,9 @@
             .contact-section {
                 display: flex;
                 justify-content: space-between;
-
+                @media only screen and (max-width: 900px) {
+                    flex-direction: column;
+                }
                 .cs-email {
                     h4 {
                         color: var(--blue);
@@ -218,6 +220,20 @@
         }
     }
 
+    .home-container {
+        .home-contents {
+            flex-direction: column;
+            flex-direction: column-reverse;
+            .left-section{
+                width: 100%;
+            }
+
+            .right-section{
+                width: 100%;
+            }
+
+        }
+    }
     .about-container {
         .about-contents {
             flex-direction: column;
