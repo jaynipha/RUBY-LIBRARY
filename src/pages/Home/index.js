@@ -8,12 +8,12 @@ const Index = () => {
     <div className="index-container">
       {/* <div className="bg-img"></div> */}
       <div className="topnav-container">
-      <TopNav visible={false} />
+      <TopNav visible={false} index={true}/>
       </div>
       <div className="welcome-container">
         <h1> WELCOME </h1>
         <p>
-          Information is life! At THE GREAT LIBRARY we bring information to your
+          Information is life! At RUBY's LIBRARY we bring information to your
           doorstep with our immense, large storage of resources from different
           writers on important issues of life.
         </p>

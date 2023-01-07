@@ -13,29 +13,138 @@
     .book-info {
         padding: 8px 10px 10px;
 
-        h3{
+        h3 {
             font-family: 'poppins';
             margin: 0;
             line-height: 1.2;
         }
 
-        p{
+        p {
             margin-top: 4px;
             margin-bottom: 0;
             font-weight: 700;
             font-style: italic;
         }
 
-        a{
+        a {
             color: var(--blue);
         }
-        
-        .preview-box{
+
+        .preview-box {
             margin-top: 10px;
             align-items: center;
             display: flex;
             justify-content: space-between;
 
+        }
+    }
+
+    &:hover {
+        transform: scale(0.9);
+    }
+}
+
+.about-books-list {
+    display: flex;
+    padding: 20px;
+
+    .book-desc {
+        width: 60%;
+
+        p {
+            margin: 0;
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        .desc-stext {
+            height: 218px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .dec-ltext {
+            height: auto;
+        }
+
+        span {
+            color: var(--blue);
+            font-weight: 600;
+            cursor: pointer;
+            float: left;
+            padding-bottom: 10px;
+        }
+
+        .preview-box-link {
+            padding-top: 55px;
+        }
+
+        .purchase-link {
+            background-color: var(--blue);
+            margin-top: 20px;
+            padding: 15px 50px;
+            color: var(--white);
+            border-radius: 5px;
+            font-size: 14px;
+
+        }
+    }
+
+    .img-section {
+        width: 35%;
+        margin-left: 30px;
+
+        img {
+            width: 200px;
+        }
+
+        .img-contents {
+            margin-top: 10px;
+
+            .author {
+                margin: 0;
+                text-align: left;
+                font-weight: 700;
+
+                span {
+                    font-style: italic;
+                    font-weight: normal;
+                }
+            }
+        }
+
+        h5 {
+            margin: 5px 0;
+            text-align: left;
+            font-family: 'poppins';
+        }
+
+        .other-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            width: 100%;
+            // justify-content: space-around;
+            // align-items: center;
+            margin-top: 10px;
+            // flex-wrap: wrap;
+            row-gap: 10px;
+            column-gap: 5px;
+
+            .od-one {
+                border: 1px solid var(--border);
+                padding: 15px 10px;
+                border-radius: 8px;
+                margin: 0 10px;
+
+                h6 {
+                    margin: 0;
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 14px;
+                }
+            }
         }
     }
 }
@@ -48,21 +157,14 @@
 @media only screen and (min-width: 320px) and (max-width: 900px) {
 
     /* Styles */
- 
-}
-
-
-@media only screen and (min-width: 600px) and (max-width: 900px) {
-  
 
 }
 
-@media only screen and (min-width: 901px) and (max-width: 1200px) {
-   
-}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {}
+
+@media only screen and (min-width: 901px) and (max-width: 1200px) {}
 
 
 
-@media screen and (min-width: 1600px) {
- 
-}
+@media screen and (min-width: 1600px) {}

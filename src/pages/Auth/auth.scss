@@ -1,10 +1,10 @@
 .auth-container {
     width: 100%;
 
-    input::placeholder{
+    input::placeholder {
         font-size: 16px;
-        
-        &::after{
+
+        &::after {
             color: red;
             content: "*";
         }
@@ -37,6 +37,11 @@
                 box-shadow: var(--card-box-shadow);
                 margin: 0 20px;
                 border-radius: 20px;
+
+                .error {
+                    color: var(--red);
+                    display: block;
+                }
 
                 h2 {
                     font-family: 'poppins' !important;

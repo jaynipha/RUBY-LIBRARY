@@ -25,11 +25,11 @@ const Books = ({ item }) => {
             clickable
             maxScore={5}
             id="123"
-            rating={2}
+            rating={3.5}
             // onRatingChange={onRatingChange}
           />
         </div>
-        <Link to="/"> Purchase Now </Link>
+        <Link to="/checkout"> Purchase Now </Link>
         {/* <h3>{item.saleInfo.saleability}</h3> */}
       </div>
     </div>

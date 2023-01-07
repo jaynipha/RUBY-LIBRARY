@@ -19,7 +19,7 @@ input:focus {
 }
 
 :root {
-  --red: #c10000;
+  --red: #f32424;
   --white: #ffffff;
   --main-background: rgba(243, 243, 243, 1);
   --border: rgba(217, 217, 217, 1);
@@ -32,4 +32,6 @@ input:focus {
   --text-color: #303030;
   --placeholder-color: rgba(48, 48, 48, 0.5);
   --card-box-shadow: 0px 0px 8px rgba(96, 95, 95, 0.2);
+  --bg: #F8F7F7;
+  ;
 }

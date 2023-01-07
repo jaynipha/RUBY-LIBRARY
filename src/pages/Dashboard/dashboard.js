@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Books from "../../components/Library/books";
 import useSortBooks from "../../hooks/useBooks";
 import "./dashboard.scss";
+import { Space, Spin } from "antd";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -175,44 +176,155 @@ const Dashboard = () => {
 
           {activeTab === 1 && (
             <div className="books-view">
-              {sociologyData?.data?.items?.map((item, i) => (
-                <Books item={item} />
-              ))}
+              {sociologyData.loading && (
+                <div
+                  className="example"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100%",
+                    marginTop: 50,
+                  }}
+                >
+                  <Space size="large">
+                    <Spin size="large" />
+                  </Space>
+                </div>
+              )}
+              {!sociologyData.loading &&
+                !sociologyData.error &&
+                sociologyData?.data?.items?.map((item, i) => (
+                  <Books item={item} />
+                ))}
             </div>
           )}
           {activeTab === 2 && (
             <div className="books-view">
-              {uxDesignData?.data?.items?.map((item, i) => (
-                <Books item={item} />
-              ))}
+              {uxDesignData.loading && (
+                <div
+                  className="example"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100%",
+                    marginTop: 50,
+                  }}
+                >
+                  <Space size="large">
+                    <Spin size="large" />
+                  </Space>
+                </div>
+              )}
+              {!uxDesignData.loading &&
+                !uxDesignData.error &&
+                uxDesignData?.data?.items?.map((item, i) => (
+                  <Books item={item} />
+                ))}
             </div>
           )}
           {activeTab === 3 && (
             <div className="books-view">
-              {economicsData?.data?.items?.map((item, i) => (
-                <Books item={item} />
-              ))}
+              {economicsData.loading && (
+                <div
+                  className="example"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100%",
+                    marginTop: 50,
+                  }}
+                >
+                  <Space size="large">
+                    <Spin size="large" />
+                  </Space>
+                </div>
+              )}
+              {!economicsData.loading &&
+                !economicsData.error &&
+                economicsData?.data?.items?.map((item, i) => (
+                  <Books item={item} />
+                ))}
             </div>
           )}
+
           {activeTab === 4 && (
             <div className="books-view">
-              {financeData?.data?.items?.map((item, i) => (
-                <Books item={item} />
-              ))}
+              {financeData.loading && (
+                <div
+                  className="example"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100%",
+                    marginTop: 50,
+                  }}
+                >
+                  <Space size="large">
+                    <Spin size="large" />
+                  </Space>
+                </div>
+              )}
+              {!financeData.loading &&
+                !financeData.error &&
+                financeData?.data?.items?.map((item, i) => (
+                  <Books item={item} />
+                ))}
             </div>
           )}
+
           {activeTab === 5 && (
             <div className="books-view">
-              {marketingData?.data?.items?.map((item, i) => (
-                <Books item={item} />
-              ))}
+              {marketingData.loading && (
+                <div
+                  className="example"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100%",
+                    marginTop: 50,
+                  }}
+                >
+                  <Space size="large">
+                    <Spin size="large" />
+                  </Space>
+                </div>
+              )}
+              {!marketingData.loading &&
+                !marketingData.error &&
+                marketingData?.data?.items?.map((item, i) => (
+                  <Books item={item} />
+                ))}
             </div>
           )}
+
           {activeTab === 6 && (
             <div className="books-view">
-              {businessData?.data?.items?.map((item, i) => (
-                <Books item={item} />
-              ))}
+              {businessData.loading && (
+                <div
+                  className="example"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100%",
+                    marginTop: 50,
+                  }}
+                >
+                  <Space size="large">
+                    <Spin size="large" />
+                  </Space>
+                </div>
+              )}
+              {!businessData.loading &&
+                !businessData.error &&
+                businessData?.data?.items?.map((item, i) => (
+                  <Books item={item} />
+                ))}
             </div>
           )}
         </div>

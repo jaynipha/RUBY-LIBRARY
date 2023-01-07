@@ -1,0 +1,146 @@
+.checkout-container {
+    width: 100%;
+    display: flex;
+    padding: 20px;
+
+    .left-section {
+        width: 50%;
+
+        .ls-header {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 20px;
+                margin: 0 auto;
+            }
+
+            .line {
+                height: 1px;
+                background-color: var(--text-color);
+                width: 50px;
+                margin: 0 10px;
+            }
+
+            .icon-box {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+
+                small {
+                    font-size: 12px;
+                    display: block;
+                    margin-top: 5px;
+
+                    &.active {
+                        color: var(--blue);
+                    }
+                }
+
+
+            }
+        }
+
+        .py-method {
+            display: flex;
+            margin-top: 25px;
+
+
+            .py-types {
+                padding-right: 10px;
+
+                h5 {
+                    font-weight: 200;
+                }
+
+                img {
+                    display: block;
+                    width: 100px;
+                    margin: 25px 0;
+                }
+            }
+
+            .py-form-card {
+                width: 70%;
+                margin: 35px 10px 10px;
+
+                .py-template {
+
+                    background-color: var(--bg);
+                    border-radius: 5px;
+                    padding: 15px;
+
+                    .card-svg {
+                        position: relative;
+                    }
+
+                    svg {
+                        position: absolute;
+                        right: 10px;
+                        top: 33px;
+                    }
+
+                    input {
+                        background-color: var(--white);
+                    }
+
+                    &>div {
+                        margin: 15px 0;
+                    }
+
+                    label {
+                        margin-bottom: 5px !important;
+                    }
+
+                    .isHorizontal {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        >div {
+                            width: 45%;
+                        }
+                    }
+                }
+
+
+                .btn-submit {
+                    display: block;
+                    background-color: var(--blue);
+                    color: var(--white);
+                    padding: 10px 50px;
+                    border-radius: 8px;
+                    font-family: "poppins" !important;
+                    width: 100%;
+                    margin: 45px 0;
+                    border: 1px solid var(--blue);
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: var(--white);
+                        border: 1px solid var(--blue);
+                        color: var(--blue);
+                    }
+                }
+            }
+        }
+    }
+
+    .right-section {
+        width: 45%;
+        border-left: 1px solid var(--border);
+
+        .purchase-book {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            // margin: 20px 0;
+            text-align: center;
+
+            img {
+                width: 400px;
+               
+            }
+        }
+    }
+}

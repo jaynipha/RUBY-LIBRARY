@@ -76,7 +76,8 @@
       }
 
       .nav-tab li:hover {
-        border: 1px solid (--blue);
+        border-bottom: 4px solid var(--blue);
+        font-weight: 700;
       }
 
       .nav-tab li.active {
@@ -120,49 +121,7 @@
   /// 
   /// ////
   /// 
-  .about-books-list {
-    display: flex;
-    padding: 20px;
-
-    .book-desc {
-      width: 65%;
-
-      p {
-        margin: 0;
-        text-align: justify;
-        line-height: 1.5;
-      }
-
-      .preview-box-link {
-        margin-top: 20px;
-      }
-
-      .purchase-link {
-        background-color: var(--blue);
-        margin-top: 20px;
-        padding: 5px 40px;
-        color: var(--white);
-        border-radius: 5px;
-        font-size: 14px;
-
-      }
-    }
-
-    .img-section {
-      width: 30%;
-      margin-left: 30px;
-
-      .img-contents {
-        margin-top: 10px;
-      }
-
-      h5 {
-        margin: 5px 0;
-        text-align: left;
-        font-family: 'poppins';
-      }
-    }
-  }
+ 
 }
 
 

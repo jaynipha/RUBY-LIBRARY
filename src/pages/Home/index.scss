@@ -1,17 +1,17 @@
 .index-container {
     // height: 100%;
-  
-    background-image: url("../../assets/images/abbey-library-of-sty-gall-1596575849.jpg");
+
+    background-image: url("../../assets/images/Component.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     // filter: blur(5px);
-    height: 100%;
+    height: 100vh;
     backdrop-filter: blur(5px);
     z-index: -2;
     // position: relative;
-    
-    .bg-img{
-        background-image: url("../../assets/images/abbey-library-of-sty-gall-1596575849.jpg");
+
+    .bg-img {
+        background-image: url("../../assets/images/Component.png");
         background-repeat: no-repeat;
         background-size: cover;
         filter: blur(5px);
@@ -22,27 +22,222 @@
         padding: 30px;
         text-align: center;
         // position: absolute;
-        z-index: 200;
-        left: 0;
-        right: 19px;
+        // z-index: 200;
+        // left: 0;
+        // right: 19px;
+        width: 55%;
+        margin: 0 auto;
 
         h1 {
             font-family: "Sorts Mill Goudy";
             margin: 10px 0;
             color: var(--white);
-            font-size: 40px;
+            font-size: 50px;
         }
-        p{
+
+        p {
             padding-bottom: 15px;
             color: var(--white);
-            font-size: 25px;
+            font-size: 32px;
         }
-        
-        a{
+
+        a {
             background-color: var(--blue);
             padding: 10px 80px;
             color: var(--white);
             border-radius: 5px;
+            font-weight: 600;
+
+            &:hover {
+                background-color: var(--white);
+                border: 1px solid var(--blue);
+                color: var(--blue);
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.home-container {
+    width: 100%;
+
+    .home-contents {
+        display: flex;
+        padding: 20px 30px;
+        justify-content: space-between;
+
+        .left-section {
+            width: 48%;
+            margin-top: 20px;
+
+            p {
+                @media only screen and (min-width: 900px) {
+                    font-size: 25px;
+                }
+            }
+        }
+
+        .right-section {
+            width: 45%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 90%;
+            }
+        }
+    }
+}
+
+.about-container {
+    width: 100%;
+
+    p{
+        color: var(--text-color);
+    }
+
+    .about-contents {
+        display: flex;
+        padding: 20px 30px;
+        justify-content: space-between;
+
+        .right-section {
+            width: 48%;
+
+            @media only screen and (max-width: 900px) {
+                width: 100%;
+            }
+
+            .contact-section {
+                display: flex;
+                justify-content: space-between;
+
+                .cs-email {
+                    h4 {
+                        color: var(--blue);
+                        font-size: 30px;
+                        margin-bottom: 10px;
+                    }
+
+                    p {
+                        margin: 5px 0;
+                        font-size: 18px;
+                        font-family: 'poppins';
+                    }
+                }
+            }
+
+            .newsletter {
+                margin-top: 35px;
+
+                label {
+                    font-family: 'poppins';
+                    margin-bottom: 5px;
+                }
+
+                .newsletter-form {
+                    .newsletter-input {
+                        padding: 15px;
+                        border: 1px solid var(--border);
+                        border-radius: 3px;
+                        width: 250px;
+                    }
+
+                    button{
+                        padding: 15px;
+                        background-color: var(--blue);
+                        color: var(--white);
+                        border: none;
+                    }
+                }
+            }
+
+            h3 {
+                color: var(--blue);
+                margin-top: 0;
+                margin-bottom: 10px;
+
+                @media only screen and (min-width: 900px) {
+                    font-size: 35px;
+                }
+            }
+
+            h5 {
+                margin-top: 0;
+                margin-bottom: 20px;
+                font-family: 'poppins';
+                color: var(--text-color);
+
+                @media only screen and (min-width: 900px) {
+                    font-size: 28px;
+                }
+            }
+
+            p {
+                margin-bottom: 15px;
+                color: var(--text-color);
+
+
+                @media only screen and (min-width: 900px) {
+                    font-size: 25px;
+                }
+            }
+        }
+
+        .left-section {
+            width: 45%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+
+            @media only screen and (max-width: 900px) {
+                width: 100%;
+            }
+
+            img {
+                width: 90%;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+    .index-container {
+        .welcome-container {
+            width: 100%;
+
+            h1 {
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .about-container {
+        .about-contents {
+            flex-direction: column;
+
+        }
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 990px) {
+    .index-container {
+        .welcome-container {
+            width: 80%;
+
+            h1 {
+                font-size: 35px;
+            }
+
+            p {
+                font-size: 20px;
+            }
         }
     }
 }

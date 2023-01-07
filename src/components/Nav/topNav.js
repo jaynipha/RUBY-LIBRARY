@@ -14,10 +14,10 @@ const TopNav = ({ visible = true, index = false }) => {
       {visible && (
         <>
           <div className="nav-contents">
-            <NavLink to="/home"> Home </NavLink>
-            <NavLink to="/search"> Search </NavLink>
-            <NavLink to="/about"> About Us </NavLink>
-            <NavLink to="/contact"> Contact Us </NavLink>
+            <NavLink activeclassname="active" to="/home"> Home </NavLink>
+            <NavLink activeclassname="active" to="/search"> Search </NavLink>
+            <NavLink activeclassname="active" to="/about"> About Us </NavLink>
+            <NavLink activeclassname="active" to="/contact"> Contact Us </NavLink>
           </div>
         </>
       )}
