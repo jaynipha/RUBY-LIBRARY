@@ -207,8 +207,12 @@
 
 @media only screen and (min-width: 320px) and (max-width: 600px) {
     .index-container {
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
         .welcome-container {
             width: 100%;
+           margin-top: 100px;
 
             h1 {
                 font-size: 25px;
