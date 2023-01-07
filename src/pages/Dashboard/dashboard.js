@@ -122,7 +122,7 @@ const Dashboard = () => {
                 handleSociology();
               }}
             >
-              Sociology
+              Javascript
             </li>
             <li
               className={activeTab === 2 ? "active" : ""}
@@ -140,7 +140,7 @@ const Dashboard = () => {
                 handleEconomics();
               }}
             >
-              Economics
+              Technical writing
             </li>
             <li
               className={activeTab === 4 ? "active" : ""}
@@ -149,7 +149,7 @@ const Dashboard = () => {
                 handleFinance();
               }}
             >
-              Finance
+              Python
             </li>
             <li
               className={activeTab === 5 ? "active" : ""}
@@ -158,7 +158,7 @@ const Dashboard = () => {
                 handleMarketing();
               }}
             >
-              Marketing
+              C#
             </li>
             <li
               className={activeTab === 6 ? "active" : ""}
@@ -167,7 +167,7 @@ const Dashboard = () => {
                 handleBusiness();
               }}
             >
-              Business Analysis
+              Artificial intelligence
             </li>
           </ul>
         </div>
