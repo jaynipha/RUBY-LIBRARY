@@ -24,7 +24,9 @@ export const register = createAsyncThunk(
 export const login = createAsyncThunk(loginUrl, async (user, thunkAPI) => {
   try {
     const response = await loginUser(user);
-    return response.data;
+    console.log(response)
+    // const message = response;
+    return  response;
   } catch (error) {
     const message = error.response.data.message;
     console.log(error);
@@ -56,7 +58,7 @@ const initialState = {
   isSuccess: false,
   message: "",
   isLoggedIn: false,
-  token: "",
+  accessToken: "",
 };
 
 export const userSlice = createSlice({
@@ -71,7 +73,7 @@ export const userSlice = createSlice({
     },
     expiredToken: (state) => {
       state.user = null;
-      state.token = "";
+      state.accessToken = "";
     },
     setProfile: (state, action) => {
       state.user = action.payload;
@@ -87,19 +89,21 @@ export const userSlice = createSlice({
       state.user = action.payload;
       state.isSuccess = true;
       state.isError = false;
-      state.token = action.payload;
+      state.accessToken = action.payload;
     });
     builder.addCase(register.rejected, (state, action) => {
       console.log(action);
       state.isError = true;
+      // state.isSuccess = false;
       state.isLoading = false;
-      state.message = action.payload;
+      state.message = action;
       state.user = null;
     });
     builder.addCase(login.pending, (state) => {
       state.isLoading = true;
     });
     builder.addCase(login.fulfilled, (state, action) => {
+      console.log(action);
       state.isLoading = false;
       state.user = action.payload;
       state.isSuccess = true;

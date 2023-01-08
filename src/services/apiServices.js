@@ -14,6 +14,8 @@ export const loginUser = async (data) => {
   let response = await axios({
     method: "POST",
     url: loginUrl,
+    headers: { "Content-Type": "application/json" },
+    credentials: "include",
     data,
   });
   return response.data;

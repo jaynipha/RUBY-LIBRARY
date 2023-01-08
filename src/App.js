@@ -25,14 +25,14 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          {/* <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/aboutbook/:id" element={<AboutBooks />} />
-            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/checkout" element={<Checkout />} /> */}
           <Route element={<ProtectedRoute />}>
             {/* <Route path="/profile" element={<UserProfile />} /> */}
-            {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-            {/* <Route path="/aboutbook/:id" element={<AboutBooks />} />
-            <Route path="/checkout" element={<Checkout />} /> */}
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/aboutbook/:id" element={<AboutBooks />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Route>
         </Routes>
       </BrowserRouter>

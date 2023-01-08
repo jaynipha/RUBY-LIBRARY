@@ -1,18 +1,27 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import TopNav from "../../components/Nav/topNav";
 import "./auth.scss";
 import Image from "../../assets/images/Welcome (1).png";
+import { login, reset } from "../../features/userSlice";
+import { Space, Spin } from "antd";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [pwd, setPassword] = useState("");
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [erroMsg, setErrorMsg] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const dispatch = useDispatch();
+  const { isError, isLoading, user, isSuccess, message } = useSelector(
+    (state) => state.userReducer
+  );
 
   const handleEmail = (e) => {
-    setEmail(e.target.value);
+    setEmail(e.target.value.toLowerCase());
   };
   const handlePassword = (e) => {
     setPassword(e.target.value);
@@ -21,11 +30,14 @@ const SignIn = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newData = { email, password };
+    const newData = { email, pwd };
     if (isSubmit) {
       console.log(newData);
+      dispatch(login(newData));
     }
   };
+
+  console.log(message);
 
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
@@ -35,14 +47,14 @@ const SignIn = () => {
   useEffect(() => {
     let values = {
       email,
-      password,
+      pwd,
     };
     setFormErrors(validate(values));
-  }, [email, password]);
+  }, [email, pwd]);
 
   //validation
   const validate = (values) => {
-    const errors = { email: "", password: "" };
+    const errors = { email: "", pwd: "" };
     let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if (!values.email) {
@@ -51,21 +63,21 @@ const SignIn = () => {
       errors.email = "Invalid Email Format!";
     }
 
-    if (!values.password) {
-      errors.password = "Password is Required.";
-    } else if (!/\d/.test(values.password)) {
-      errors.password = "Password Should Contain AtLeast A Number.";
-    } else if (!/[a-z]/.test(values.password)) {
-      errors.password = "Password Should Contain Lower Case.";
-    } else if (!/[A-Z]/.test(values.password)) {
-      errors.password = "Password Should Contain Upper Case.";
-    } else if (!/[!#=@$%&*)(_-]/.test(values.password)) {
-      errors.password = "Password Should Contain A Special Character.";
-    } else if (values.password.length < 8) {
-      errors.password = "Password Should Contain At Least 8 characters.";
+    if (!values.pwd) {
+      errors.pwd = "Password is Required.";
+    } else if (!/\d/.test(values.pwd)) {
+      errors.pwd = "Password Should Contain AtLeast A Number.";
+    } else if (!/[a-z]/.test(values.pwd)) {
+      errors.pwd = "Password Should Contain Lower Case.";
+    } else if (!/[A-Z]/.test(values.pwd)) {
+      errors.pwd = "Password Should Contain Upper Case.";
+    } else if (!/[!#=@$%&*)(_-]/.test(values.pwd)) {
+      errors.pwd = "Password Should Contain A Special Character.";
+    } else if (values.pwd.length < 8) {
+      errors.pwd = "Password Should Contain At Least 8 characters.";
     }
 
-    if (errors.email.length === 0 && errors.password.length === 0) {
+    if (errors.email.length === 0 && errors.pwd.length === 0) {
       setIsSubmit(true);
     } else {
       setIsSubmit(false);
@@ -73,6 +85,32 @@ const SignIn = () => {
 
     return errors;
   };
+
+  useEffect(() => {
+    const controller = new AbortController();
+    if (isError) {
+      // if (message.response.data === "Unauthorized") {
+        setErrorMsg("Error! Invalid username or password");
+        setTimeout(() => {
+          setErrorMsg("");
+        }, 2000);
+        dispatch(reset());
+      // }
+    }
+    if (isSuccess) {
+      
+      dispatch(reset());
+      // navigate(from, { replace: true });
+      // if (message.roles[0] === 2001) {
+        navigate("/dashboard", { replace: true });
+      } else {
+        // navigate("/profile");
+      }
+    // }
+    return () => controller.abort();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isError, isSuccess, isLoading, message, navigate, user]);
+
   return (
     <div className="auth-container">
       <TopNav visible={false} />
@@ -102,12 +140,12 @@ const SignIn = () => {
                 <input
                   className="form-input"
                   type="password"
-                  name="password"
-                  value={password}
+                  name="pwd"
+                  value={pwd}
                   onChange={handlePassword}
                   placeholder="Password"
                 />
-                <small className="error">{formErrors.email}</small>
+                <small className="error">{formErrors.pwd}</small>
               </div>
 
               <input
@@ -118,12 +156,20 @@ const SignIn = () => {
               />
               <label htmlFor=""> Save Password</label>
 
+              <p className="error">{erroMsg}</p>
               <button
                 className="btn-submit"
                 type="submit"
                 onClick={handleSubmit}
+                disabled={isLoading}
               >
-                Login now
+                {isLoading ? (
+                  <Space size="middle">
+                    <Spin size="small" />
+                  </Space>
+                ) : (
+                  "Log now"
+                )}
               </button>
             </form>
             <div

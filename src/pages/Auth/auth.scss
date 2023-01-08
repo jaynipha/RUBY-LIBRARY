@@ -43,6 +43,10 @@
                     display: block;
                 }
 
+                .successTxt {
+                    color: rgb(93, 176, 117);
+                }
+
                 h2 {
                     font-family: 'poppins' !important;
                     margin-top: 0;
@@ -136,6 +140,11 @@
         .right-auth-container {
             padding: 10px !important;
             width: 100% !important;
+            
+            .form-container{
+                padding: 15px !important;
+                margin: 0 10px !important;
+            }
         }
     }
 }

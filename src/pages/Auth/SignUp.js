@@ -1,18 +1,33 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import TopNav from "../../components/Nav/topNav";
 import "./auth.scss";
 import Image from "../../assets/images/Welcome.png";
+import { register } from "../../features/userSlice";
+import { Space, Spin } from "antd";
+import useSortBooks from "../../hooks/useBooks";
 
 const SignUp = () => {
   //state for local component to track error---- validation
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [checkbox, setCheckBox] = useState(false);
+  const [erroMsg, setErrorMsg] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const dispatch = useDispatch();
+  const { isError, isLoading, user, isSuccess, message } = useSelector(
+    (state) => state.userReducer
+  );
+
+  const { handleRegisterUser, registerUserData } = useSortBooks();
 
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
     phone: "",
     email: "",
     password: "",
@@ -45,7 +60,7 @@ const SignUp = () => {
   }, [formErrors, isSubmit]);
 
   // useEffect(() => {
-  
+
   //   setFormErrors(validate(formData));
   // }, [formData]);
 
@@ -85,16 +100,16 @@ const SignUp = () => {
       errors.checkbox = "Please accept terms and conditions";
     }
     // check for no errors before allowing to send
-    if (!values.firstName) {
-      errors.firstName = "First Name is Required";
-    } else if (values.firstName.length < 3) {
-      errors.firstName = "First Name should be more than 3";
+    if (!values.firstname) {
+      errors.firstname = "First Name is Required";
+    } else if (values.firstname.length < 3) {
+      errors.firstname = "First Name should be more than 3";
     }
 
-    if (!values.lastName) {
-      errors.lastName = "Last Name is Required";
-    } else if (values.lastName.length < 3) {
-      errors.lastName = "Last Name should be more than 3";
+    if (!values.lastname) {
+      errors.lastname = "Last Name is Required";
+    } else if (values.lastname.length < 3) {
+      errors.lastname = "Last Name should be more than 3";
     }
 
     if (!values.phone) {
@@ -120,20 +135,44 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newData = {
-      firstName: formData.firstName,
-      otherName: formData.otherName,
-      email: formData.email,
-      phone: formData.phone,
-      password: formData.password,
-      comfirmPassword: formData.confirm_password,
+      firstname: formData.firstname,
+      lastname: formData.lastname,
+      email: formData.email.toLowerCase(),
+      phone: Number(formData.phone),
+      pwd: formData.password,
     };
     handleValidation();
     if (isSubmit) {
       // 	resStatus === "success" && clearInputs();
+      dispatch(register(newData));
+      handleRegisterUser(newData);
     }
   };
 
-  console.log(formData)
+  console.log(formData);
+
+  useEffect(() => {
+    if (registerUserData?.response?.status === 201) {
+      setSuccessMsg(`Registered Successfully! Please Login`);
+      setTimeout(() => {
+        setSuccessMsg("");
+        // navigate("/signin");
+      }, 2000);
+    }
+  }, [user, isSuccess, message]);
+
+  console.log(message);
+  console.log(isSuccess);
+  console.log(isError);
+  console.log(registerUserData);
+  useEffect(() => {
+    if (registerUserData?.error?.response?.data === "Conflict") {
+      setErrorMsg("Email has been used!");
+      setTimeout(() => {
+        setErrorMsg("");
+      }, 2000);
+    }
+  }, [registerUserData?.error]);
 
   return (
     <div className="auth-container">
@@ -147,29 +186,29 @@ const SignUp = () => {
           <div className="form-container">
             <h2>Sign Up</h2>
 
-            <form onSubmit={handleSubmit}>
+            <form action="">
               <div className="form-group">
                 <input
                   className="form-input"
                   type="text"
-                  name="firstName"
-                  value={formData.firstName}
+                  name="firstname"
+                  value={formData.firstname}
                   onChange={handleInputs}
                   placeholder="First Name *"
                 />
-                <small className="error">{formErrors.firstName}</small>
+                <small className="error">{formErrors.firstname}</small>
               </div>
 
               <div className="form-group">
                 <input
                   className="form-input"
                   type="text"
-                  name="lastName"
-                  value={formData.lastName}
+                  name="lastname"
+                  value={formData.lastname}
                   onChange={handleInputs}
                   placeholder="Last Name *"
                 />
-                <small className="error">{formErrors.lastName}</small>
+                <small className="error">{formErrors.lastname}</small>
               </div>
               <div className="form-group">
                 <input
@@ -211,7 +250,7 @@ const SignUp = () => {
                 <input
                   className="form-input"
                   type="password"
-                  name="confirmPassword"
+                  name="confirm_password"
                   value={formData.confirm_password}
                   onChange={handleInputs}
                   placeholder="Re-enter Password *"
@@ -233,12 +272,22 @@ const SignUp = () => {
               </label>
               <small className="error">{formErrors.checkbox}</small>
 
+              <p className="successTxt"> {successMsg} </p>
+              <p className="error">{erroMsg}</p>
+
               <button
                 className="btn-submit"
                 type="submit"
-                // onClick={() => handleSubmit()}
+                onClick={handleSubmit}
+                disabled={isLoading}
               >
-                Sign up
+                {isLoading ? (
+                  <Space size="middle">
+                    <Spin size="small" />
+                  </Space>
+                ) : (
+                  "Sign up"
+                )}
               </button>
             </form>
           </div>

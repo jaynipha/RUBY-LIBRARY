@@ -219,6 +219,30 @@ const useSortBooks = () => {
     }
   };
 
+   //
+  //
+  //REGISTER USER
+  const [{ ...registerUserData }, registerUser] = useAxios(
+    {
+      method: "POST",
+    },
+    {
+      manual: true,
+    }
+  );
+
+  const handleRegisterUser = async (data) => {
+    try {
+      await registerUser({
+        url: `https://good-tan-viper-hose.cyclic.app/register`,
+        data,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+
   return {
     handleSociology,
     sociologyData,
@@ -233,7 +257,9 @@ const useSortBooks = () => {
     handleMarketing,
     marketingData,
     handleGetBook,
-    bookData
+    bookData,
+    handleRegisterUser,
+    registerUserData
   };
 };
 

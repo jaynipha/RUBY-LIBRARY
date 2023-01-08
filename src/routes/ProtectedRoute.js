@@ -8,7 +8,7 @@ export default function ProtectedRoute() {
 	let dispatch = useDispatch();
 	const { user } = useSelector((state) => state.userReducer);
 
-	let token = user !== null ? user?.token : false;
+	let token = user !== null ? user?.accessToken : false;
 	let decodedToken = jwt_decode(token);
 	let currentDate = new Date();
 
