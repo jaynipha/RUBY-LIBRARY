@@ -1,7 +1,8 @@
 import React from "react";
 import TopNav from "../../components/Nav/topNav";
-import photo from "../../assets/images/Component 1.png"
-import "./index.scss"
+import photo from "../../assets/images/Component 1.png";
+import "./index.scss";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -23,9 +24,13 @@ const Home = () => {
             dictumst felis viverra. Massa duis facilisis et nibh porta purus at.
             Pulvinar commodo porttitor pulvinar justo vitae elementum
           </p>
+
+          <div>
+            <Link to="/login"> Available books </Link>
+          </div>
         </div>
         <div className="right-section">
-          <img src={photo} alt=""/>
+          <img src={photo} alt="" />
         </div>
       </div>
     </div>

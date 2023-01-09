@@ -75,6 +75,21 @@
                     font-size: 25px;
                 }
             }
+
+            a {
+                background-color: var(--blue);
+                padding: 10px 80px;
+                color: var(--white);
+                border-radius: 5px;
+                font-weight: 600;
+
+                &:hover {
+                    background-color: var(--white);
+                    border: 1px solid var(--blue);
+                    color: var(--blue);
+                    font-weight: 600;
+                }
+            }
         }
 
         .right-section {
@@ -93,7 +108,7 @@
 .about-container {
     width: 100%;
 
-    p{
+    p {
         color: var(--text-color);
     }
 
@@ -112,9 +127,11 @@
             .contact-section {
                 display: flex;
                 justify-content: space-between;
+
                 @media only screen and (max-width: 900px) {
                     flex-direction: column;
                 }
+
                 .cs-email {
                     h4 {
                         color: var(--blue);
@@ -146,7 +163,7 @@
                         width: 250px;
                     }
 
-                    button{
+                    button {
                         padding: 15px;
                         background-color: var(--blue);
                         color: var(--white);
@@ -209,10 +226,11 @@
     .index-container {
         display: flex;
         flex-direction: column;
+
         // justify-content: space-between;
         .welcome-container {
             width: 100%;
-           margin-top: 100px;
+            margin-top: 100px;
 
             h1 {
                 font-size: 25px;
@@ -228,16 +246,18 @@
         .home-contents {
             flex-direction: column;
             flex-direction: column-reverse;
-            .left-section{
+
+            .left-section {
                 width: 100%;
             }
 
-            .right-section{
+            .right-section {
                 width: 100%;
             }
 
         }
     }
+
     .about-container {
         .about-contents {
             flex-direction: column;

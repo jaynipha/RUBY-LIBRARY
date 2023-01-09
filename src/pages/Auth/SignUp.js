@@ -156,7 +156,7 @@ const SignUp = () => {
       setSuccessMsg(`Registered Successfully! Please Login`);
       setTimeout(() => {
         setSuccessMsg("");
-        // navigate("/signin");
+        navigate("/login");
       }, 2000);
     }
   }, [user, isSuccess, message]);
@@ -243,6 +243,11 @@ const SignUp = () => {
                   onChange={handleInputs}
                   placeholder="Password *"
                 />
+                <small style={{fontSize: 11}} className="">
+                  (password must contain uppercase, number and special character
+                  )
+                </small>
+
                 <small className="error">{formErrors.password}</small>
               </div>
 

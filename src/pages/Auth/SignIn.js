@@ -102,7 +102,7 @@ const SignIn = () => {
       dispatch(reset());
       // navigate(from, { replace: true });
       // if (message.roles[0] === 2001) {
-        navigate("/dashboard", { replace: true });
+        navigate("/home", { replace: true });
       } else {
         // navigate("/profile");
       }

@@ -20,9 +20,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           {/* <Route path="/dashboard" element={<Dashboard />} />
@@ -30,7 +27,10 @@ function App() {
             <Route path="/checkout" element={<Checkout />} /> */}
           <Route element={<ProtectedRoute />}>
             {/* <Route path="/profile" element={<UserProfile />} /> */}
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/searchbooks" element={<Dashboard />} />
             <Route path="/aboutbook/:id" element={<AboutBooks />} />
             <Route path="/checkout" element={<Checkout />} />
           </Route>

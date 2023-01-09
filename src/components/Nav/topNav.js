@@ -46,7 +46,7 @@ const TopNav = ({ visible = true, index = false }) => {
               {" "}
               Home{" "}
             </NavLink>
-            <NavLink activeclassname="active" to="/search">
+            <NavLink activeclassname="active" to="/searchbooks">
               {" "}
               Search{" "}
             </NavLink>

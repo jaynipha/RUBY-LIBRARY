@@ -4,11 +4,11 @@ import { useDispatch } from "react-redux";
 import { useEffect, useState, useContext } from "react";
 
 const useSortBooks = () => {
-  const sociology = "javascript";
-  const uxDesign = "Ux design";
-  const economics = "technical writing";
-  const finance = "python";
-  const marketing = "C#";
+  const sociology = "web development";
+  const uxDesign = "ui/Ux design";
+  const economics = "product design";
+  const finance = "data analysis";
+  const marketing = "product management";
   const business = "artificial intelligence";
 
   const [apiKey, setApiKey] = useState(
