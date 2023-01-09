@@ -26,7 +26,7 @@ const Home = () => {
           </p>
 
           <div>
-            <Link to="/login"> Available books </Link>
+            <Link to="/searchbooks"> Available books </Link>
           </div>
         </div>
         <div className="right-section">
