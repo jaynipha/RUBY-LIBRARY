@@ -156,7 +156,7 @@ const SignUp = () => {
       setSuccessMsg(`Registered Successfully! Please Login`);
       setTimeout(() => {
         setSuccessMsg("");
-        navigate("/login");
+        navigate("/confirmation");
       }, 2000);
     }
   }, [user, isSuccess, message]);

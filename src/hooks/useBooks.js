@@ -21,6 +21,10 @@ const useSortBooks = () => {
     {
       url: `https://www.googleapis.com/books/v1/volumes?q=${sociology}&key=${apiKey}`,
       method: "GET",
+      params: {
+        startIndex: 1,
+        maxResults: 30,
+      },
     },
     { manual: true }
   );
@@ -50,6 +54,10 @@ const useSortBooks = () => {
     {
       url: `https://www.googleapis.com/books/v1/volumes?q=${uxDesign}&key=${apiKey}`,
       method: "GET",
+      params: {
+        startIndex: 0,
+        maxResults: 30,
+      },
     },
     { manual: true }
   );
@@ -79,6 +87,10 @@ const useSortBooks = () => {
     {
       url: `https://www.googleapis.com/books/v1/volumes?q=${finance}&key=${apiKey}`,
       method: "GET",
+      params: {
+        startIndex: 0,
+        maxResults: 30,
+      },
     },
     { manual: true }
   );
@@ -108,6 +120,10 @@ const useSortBooks = () => {
     {
       url: `https://www.googleapis.com/books/v1/volumes?q=${economics}&key=${apiKey}`,
       method: "GET",
+      params: {
+        startIndex: 0,
+        maxResults: 30,
+      },
     },
     { manual: true }
   );
@@ -137,6 +153,10 @@ const useSortBooks = () => {
     {
       url: `https://www.googleapis.com/books/v1/volumes?q=${marketing}&key=${apiKey}`,
       method: "GET",
+      params: {
+        startIndex: 0,
+        maxResults: 30,
+      },
     },
     { manual: true }
   );
@@ -166,6 +186,10 @@ const useSortBooks = () => {
     {
       url: `https://www.googleapis.com/books/v1/volumes?q=${business}&key=${apiKey}`,
       method: "GET",
+      params: {
+        startIndex: 0,
+        maxResults: 30,
+      },
     },
     { manual: true }
   );
@@ -219,7 +243,7 @@ const useSortBooks = () => {
     }
   };
 
-   //
+  //
   //
   //REGISTER USER
   const [{ ...registerUserData }, registerUser] = useAxios(
@@ -242,7 +266,6 @@ const useSortBooks = () => {
     }
   };
 
-
   return {
     handleSociology,
     sociologyData,
@@ -259,7 +282,7 @@ const useSortBooks = () => {
     handleGetBook,
     bookData,
     handleRegisterUser,
-    registerUserData
+    registerUserData,
   };
 };
 

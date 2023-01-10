@@ -67,10 +67,11 @@
         justify-content: space-between;
 
         .left-section {
-            width: 48%;
+            width: 49%;
             margin-top: 20px;
 
             p {
+                text-align: justify;
                 @media only screen and (min-width: 900px) {
                     font-size: 25px;
                 }
@@ -93,7 +94,7 @@
         }
 
         .right-section {
-            width: 45%;
+            width: 49%;
             text-align: center;
             display: flex;
             justify-content: center;

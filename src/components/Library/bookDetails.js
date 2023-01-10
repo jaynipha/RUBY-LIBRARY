@@ -13,7 +13,6 @@ const BookDetails = ({ bookData }) => {
     setIsReadMore(!isReadMore);
   };
 
-  console.log(navigate);
   const openProfile = (bookData) => {
     navigate(`/checkout`, {
       state: {
