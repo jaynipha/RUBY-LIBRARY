@@ -159,7 +159,7 @@ const SignUp = () => {
         navigate("/confirmation");
       }, 2000);
     }
-  }, [user, isSuccess, message]);
+  }, [registerUserData?.response]);
 
   console.log(message);
   console.log(isSuccess);

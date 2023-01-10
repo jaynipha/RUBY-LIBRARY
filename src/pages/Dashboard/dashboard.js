@@ -5,6 +5,7 @@ import Books from "../../components/Library/books";
 import useSortBooks from "../../hooks/useBooks";
 import "./dashboard.scss";
 import { Space, Spin } from "antd";
+import TopNav from "../../components/Nav/topNav";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -124,9 +125,10 @@ const Dashboard = () => {
   console.log(sociologyData);
   return (
     <div className="dashboard-container">
-      <div className="dashboard-header">
+      {/* <div className="dashboard-header">
         <h2> Available Books </h2>
-      </div>
+      </div> */}
+      <TopNav />
       <div className="search-container">
         <h3> Sort Library </h3>
         <form onSubmit={handleSubmit}>
@@ -135,6 +137,7 @@ const Dashboard = () => {
             onChange={handleChange}
             name=""
             id=""
+            value={books?.toLowerCase()}
             placeholder="search books"
           />
           <button className="search-btn"> Search</button>

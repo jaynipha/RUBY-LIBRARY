@@ -24,7 +24,10 @@ const TopNav = ({ visible = true, index = false }) => {
     }
   };
   return (
-    <nav ref={dropbox}>
+    <nav
+      ref={dropbox}
+      className={visible ? "nav-bar" : ""}
+    >
       <div className="nav-header">
         <img src={Book} alt="" className="nav-img" />
         <Link to="/" style={{ color: index ? "#fff" : "#2028F4" }}>
@@ -41,22 +44,22 @@ const TopNav = ({ visible = true, index = false }) => {
           >
             <img src={bars} alt="" />
           </div>
-          <div className={open ? "nav-contents nav-contents-active" : "nav-contents"}>
+          <div
+            className={
+              open ? "nav-contents nav-contents-active" : "nav-contents"
+            }
+          >
             <NavLink activeclassname="active" to="/home">
-              {" "}
-              Home{" "}
+              Home
             </NavLink>
-            <NavLink activeclassname="active" to="/searchbooks">
-              {" "}
-              Search{" "}
+            <NavLink activeclassname="active" to="/books">
+              Books
             </NavLink>
             <NavLink activeclassname="active" to="/about">
-              {" "}
-              About Us{" "}
+              About Us
             </NavLink>
             <NavLink activeclassname="active" to="/contact">
-              {" "}
-              Contact Us{" "}
+              Contact Us
             </NavLink>
           </div>
         </>

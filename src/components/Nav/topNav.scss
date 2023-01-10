@@ -4,6 +4,11 @@ nav {
     padding: 20px 30px;
     align-items: center;
 
+    &.nav-bar {
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--box-shadow-sm);
+    }
+
     .bars-box {
         display: flex;
         justify-content: end;
@@ -26,10 +31,12 @@ nav {
         display: flex;
         align-items: center;
 
-        img {}
+        img {
+            width: 80px;
+        }
 
         a {
-            font-size: 25px;
+            font-size: 22px;
             width: 150px;
             margin-left: 20px;
             text-align: center;

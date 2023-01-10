@@ -23,7 +23,7 @@ const useSortBooks = () => {
       method: "GET",
       params: {
         startIndex: 1,
-        maxResults: 30,
+        maxResults: 40,
       },
     },
     { manual: true }
@@ -56,7 +56,7 @@ const useSortBooks = () => {
       method: "GET",
       params: {
         startIndex: 0,
-        maxResults: 30,
+        maxResults: 40,
       },
     },
     { manual: true }
@@ -89,7 +89,7 @@ const useSortBooks = () => {
       method: "GET",
       params: {
         startIndex: 0,
-        maxResults: 30,
+        maxResults: 40,
       },
     },
     { manual: true }
@@ -122,7 +122,7 @@ const useSortBooks = () => {
       method: "GET",
       params: {
         startIndex: 0,
-        maxResults: 30,
+        maxResults: 40,
       },
     },
     { manual: true }
@@ -155,7 +155,7 @@ const useSortBooks = () => {
       method: "GET",
       params: {
         startIndex: 0,
-        maxResults: 30,
+        maxResults: 40,
       },
     },
     { manual: true }
@@ -188,7 +188,7 @@ const useSortBooks = () => {
       method: "GET",
       params: {
         startIndex: 0,
-        maxResults: 30,
+        maxResults: 40,
       },
     },
     { manual: true }
