@@ -15,11 +15,10 @@ const About = () => {
           <h3> About Us </h3>
           <h5>We Are The Best Go TO Online Library for Tech Resources</h5>
           <p>
-            Whether you do a search for ux resources, web dev resources or a
-            variety of other highly competitive resources in the world of tech,
-            we completely dominate our competitors at our own game. Further ,
-            you will see we are the top rated online library with 235 reviews on
-            google giving us 4.8 stars.
+            Ruby’s library remains the best at the game in curating the best
+            tech resources for everyone. Whether you’re looking to start a new
+            career or improving upon the one you already have, our resources are
+            your best guide.
           </p>
         </div>
       </div>

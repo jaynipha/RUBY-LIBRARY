@@ -13,6 +13,7 @@ import AboutBooks from "./pages/Dashboard/aboutBooks";
 import Checkout from "./pages/Checkout/checkout";
 import About from "./pages/Home/about";
 import Contact from "./pages/Home/contact";
+import Confirmation from "./pages/Auth/confirmation";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/confirmation" element={<Confirmation />} />
           {/* <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/aboutbook/:id" element={<AboutBooks />} />
             <Route path="/checkout" element={<Checkout />} /> */}

@@ -11,18 +11,19 @@ const Home = () => {
       <div className="home-contents">
         <div className="left-section">
           <p>
-            The Ruby’s Library was created in the year 2019 by the Ruby project
-            team of the Nsonye project program to solve learner and designer’s
-            need of accessing right resources during research and teases
-            studies.
+            The Ruby’s library was created majorly to solve the problem of tech
+            newbies searching for the right resources and books to start their
+            career. The internet is filled with so many resources and anyone
+            who’s just starting out can get confused. This is why Ruby’s library
+            contains a wide range of educational books in almost the faucets
+            of tech which includes - web development, product design, data
+            analysis, product management and artificial intelligence.
           </p>
           <p>
-            Libero ultrices risus egestas in aliquam eu. Tincidunt pretium ac
-            purus a nibh. Purus nulla lacus egestas fusce vitae morbi. Elit nunc
-            eget facilisis sed nec dictumst ornare. Consequat non pulvinar duis
-            sed. Et mattis tempor ipsum facilisi vivamus morbi. Vitae tortor
-            dictumst felis viverra. Massa duis facilisis et nibh porta purus at.
-            Pulvinar commodo porttitor pulvinar justo vitae elementum
+            We have a vast library of carefully curated books to meet the needs
+            of everyone who’s about to start a career in tech! No matter what
+            you’re searching for, you’ll find it here. You can checkout and pay
+            for any book you desire.
           </p>
 
           <div>

@@ -168,7 +168,7 @@ const SignIn = () => {
                     <Spin size="small" />
                   </Space>
                 ) : (
-                  "Log now"
+                  "Login"
                 )}
               </button>
             </form>
