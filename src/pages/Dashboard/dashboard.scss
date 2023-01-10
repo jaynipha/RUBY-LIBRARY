@@ -96,10 +96,7 @@
         // display: flex;
         // flex-wrap: wrap;
         padding: 10px;
-
-
         display: grid;
-
         width: 90%;
         //Using auto-fill and auto-fit
         grid-template-rows: repeat(2, minmax(150px, min-content));
@@ -109,8 +106,16 @@
 
         // grid-auto-rows: 150px;
         grid-gap: 10px;
-
         margin: 0 auto;
+
+        .no-books{
+          font-size: 25px;
+          font-family: 'poppins';
+          text-align: center;
+          color: var(--text-color);
+          font-weight: 600;
+          margin-top: 50px;
+        }
 
       }
     }

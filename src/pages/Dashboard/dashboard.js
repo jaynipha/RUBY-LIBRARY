@@ -9,6 +9,7 @@ import { Space, Spin } from "antd";
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState(1);
   const [books, setBooks] = useState("");
+  const [result, setResult] = useState("");
   const {
     handleSociology,
     sociologyData,
@@ -70,8 +71,37 @@ const Dashboard = () => {
   //   return item;
   // });
 
+  // const handleSearch = (event) => {
+  //   setSearchTerm(event.target.value);
+  // };
+
+  const search1 = sociologyData?.data?.items?.filter((item) => {
+    return item.volumeInfo.title.toLowerCase()?.includes(books);
+  });
+
+  const search2 = sociologyData?.data?.items?.filter((item) => {
+    return item.volumeInfo.title.toLowerCase()?.includes(books);
+  });
+
+  const search3 = economicsData?.data?.items?.filter((item) => {
+    return item.volumeInfo.title.toLowerCase()?.includes(books);
+  });
+
+  const search4 = financeData?.data?.items?.filter((item) => {
+    return item.volumeInfo.title.toLowerCase()?.includes(books);
+  });
+
+  const search5 = marketingData?.data?.items?.filter((item) => {
+    return item.volumeInfo.title.toLowerCase()?.includes(books);
+  });
+
+  const search6 = businessData?.data?.items?.filter((item) => {
+    return item.volumeInfo.title.toLowerCase()?.includes(books);
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    books(e.target.value);
 
     // axios
     //   .get(
@@ -194,9 +224,13 @@ const Dashboard = () => {
               )}
               {!sociologyData.loading &&
                 !sociologyData.error &&
-                sociologyData?.data?.items?.map((item, i) => (
-                  <Books item={item} />
-                ))}
+                search1?.map((item, i) => <Books item={item} />)}
+
+              {!sociologyData.loading &&
+                !sociologyData.error &&
+                search1?.length === 0 && (
+                  <p className="no-books">No Books Available</p>
+                )}
             </div>
           )}
           {activeTab === 2 && (
@@ -219,9 +253,13 @@ const Dashboard = () => {
               )}
               {!uxDesignData.loading &&
                 !uxDesignData.error &&
-                uxDesignData?.data?.items?.map((item, i) => (
-                  <Books item={item} />
-                ))}
+                search2?.map((item, i) => <Books item={item} />)}
+
+              {!uxDesignData.loading &&
+                !uxDesignData.error &&
+                search2?.length === 0 && (
+                  <p className="no-books">No Books Available</p>
+                )}
             </div>
           )}
           {activeTab === 3 && (
@@ -244,9 +282,12 @@ const Dashboard = () => {
               )}
               {!economicsData.loading &&
                 !economicsData.error &&
-                economicsData?.data?.items?.map((item, i) => (
-                  <Books item={item} />
-                ))}
+                search3?.map((item, i) => <Books item={item} />)}
+              {!economicsData.loading &&
+                !economicsData.error &&
+                search3?.length === 0 && (
+                  <p className="no-books">No Books Available</p>
+                )}{" "}
             </div>
           )}
 
@@ -270,9 +311,12 @@ const Dashboard = () => {
               )}
               {!financeData.loading &&
                 !financeData.error &&
-                financeData?.data?.items?.map((item, i) => (
-                  <Books item={item} />
-                ))}
+                search4?.map((item, i) => <Books item={item} />)}
+              {!financeData.loading &&
+                !financeData.error &&
+                search4?.length === 0 && (
+                  <p className="no-books">No Books Available</p>
+                )}{" "}
             </div>
           )}
 
@@ -296,9 +340,12 @@ const Dashboard = () => {
               )}
               {!marketingData.loading &&
                 !marketingData.error &&
-                marketingData?.data?.items?.map((item, i) => (
-                  <Books item={item} />
-                ))}
+                search5?.map((item, i) => <Books item={item} />)}
+              {!marketingData.loading &&
+                !marketingData.error &&
+                search5?.length === 0 && (
+                  <p className="no-books">No Books Available</p>
+                )}
             </div>
           )}
 
@@ -322,9 +369,12 @@ const Dashboard = () => {
               )}
               {!businessData.loading &&
                 !businessData.error &&
-                businessData?.data?.items?.map((item, i) => (
-                  <Books item={item} />
-                ))}
+                search6?.map((item, i) => <Books item={item} />)}
+              {!businessData.loading &&
+                !businessData.error &&
+                search6?.length === 0 && (
+                  <p className="no-books">No Books Available</p>
+                )}
             </div>
           )}
         </div>
