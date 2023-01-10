@@ -76,32 +76,32 @@ const Dashboard = () => {
   // };
 
   const search1 = sociologyData?.data?.items?.filter((item) => {
-    return item.volumeInfo.title.toLowerCase()?.includes(books);
+    return item?.volumeInfo?.title?.toLowerCase()?.includes(books);
   });
 
-  const search2 = sociologyData?.data?.items?.filter((item) => {
-    return item.volumeInfo.title.toLowerCase()?.includes(books);
+  const search2 = uxDesignData?.data?.items?.filter((item) => {
+    return item?.volumeInfo?.title?.toLowerCase()?.includes(books);
   });
 
   const search3 = economicsData?.data?.items?.filter((item) => {
-    return item.volumeInfo.title.toLowerCase()?.includes(books);
+    return item?.volumeInfo?.title?.toLowerCase()?.includes(books);
   });
 
   const search4 = financeData?.data?.items?.filter((item) => {
-    return item.volumeInfo.title.toLowerCase()?.includes(books);
+    return item?.volumeInfo?.title?.toLowerCase()?.includes(books);
   });
 
   const search5 = marketingData?.data?.items?.filter((item) => {
-    return item.volumeInfo.title.toLowerCase()?.includes(books);
+    return item?.volumeInfo?.title?.toLowerCase()?.includes(books);
   });
 
   const search6 = businessData?.data?.items?.filter((item) => {
-    return item.volumeInfo.title.toLowerCase()?.includes(books);
+    return item?.volumeInfo?.title?.toLowerCase()?.includes(books);
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    books(e.target.value);
+    books(e.target.value).toLowerCase();
 
     // axios
     //   .get(
