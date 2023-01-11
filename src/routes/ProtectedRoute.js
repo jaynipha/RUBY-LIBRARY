@@ -15,7 +15,8 @@ export default function ProtectedRoute() {
     let decodedToken = jwt_decode(token);
     let currentDate = new Date();
 
-    console.log(decodedToken);
+    console.log("aaa", decodedToken);
+    console.log("qqq", user);
 
     if (decodedToken.exp * 1000 < currentDate.getTime()) {
       dispatch(reset());

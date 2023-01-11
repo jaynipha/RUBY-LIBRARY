@@ -15,11 +15,13 @@ import About from "./pages/Home/about";
 import Contact from "./pages/Home/contact";
 import Confirmation from "./pages/Auth/confirmation";
 import NotFound from "./pages/Auth/notfound";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <ErrorBoundary>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<SignIn />} />
@@ -36,6 +38,7 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
           </Route>
         </Routes>
+        </ErrorBoundary>
       </BrowserRouter>
     </div>
   );

@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import TopNav from "../../components/Nav/topNav";
 import "./auth.scss";
 import Image from "../../assets/images/Welcome.png";
-import { register } from "../../features/userSlice";
+import { expiredToken, register } from "../../features/userSlice";
 import { Space, Spin } from "antd";
 import useSortBooks from "../../hooks/useBooks";
 
@@ -153,7 +153,8 @@ const SignUp = () => {
 
   useEffect(() => {
     if (registerUserData?.response?.status === 201) {
-      setSuccessMsg(`Registered Successfully! Please Login`);
+      // setSuccessMsg(`Registered Successfully! Please Login`);
+      dispatch(expiredToken());
       setTimeout(() => {
         setSuccessMsg("");
         navigate("/confirmation");
